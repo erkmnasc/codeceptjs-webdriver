@@ -1,5 +1,3 @@
-var faker = require('faker');
-
 const {I, home_page, create_user_page} = inject()
 
 Feature('Create User');

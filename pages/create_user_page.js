@@ -1,7 +1,7 @@
-var faker = require('faker');
-var name = faker.name.findName();
-var email = faker.internet.email();
-var password = faker.internet.password();
+const { faker } = require('@faker-js/faker');
+const name = faker.person.fullName();
+const email = faker.internet.email();
+const password = faker.internet.password();
 const { I } = inject();
 
 module.exports = {
@@ -14,6 +14,6 @@ module.exports = {
   criandoUsuarioComSucesso() {
     I.fillField(this.fields.registrarNome, name);
     I.fillField(this.fields.registrarEmail, email);
-    I.fillField(this.fields.registrarSenha, password, secret);
+    I.fillField(this.fields.registrarSenha, secret(password));
   }
 }

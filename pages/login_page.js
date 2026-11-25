@@ -1,6 +1,6 @@
-var faker = require('faker');
-var email = faker.internet.email();
-var password = faker.internet.password();
+const { faker } = require('@faker-js/faker');
+const email = faker.internet.email();
+const password = faker.internet.password();
 const { I, home_page} = inject();
 
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
     home_page.botaoPaginaLogin();
     home_page.validarTextoLogin();
     I.fillField(this.fields.inserirEmail, email);
-    I.fillField(this.fields.inserirSenha, password, secret);
+    I.fillField(this.fields.inserirSenha, secret(password));
     home_page.botaoLogin();
     home_page.validarLoginRealizado();
     home_page.botaoLoginRealizadoOK();
@@ -39,7 +39,7 @@ module.exports = {
     home_page.paginaInicial();
     home_page.botaoPaginaLogin();
     home_page.validarTextoLogin();
-    I.fillField(this.fields.inserirSenha, password, secret);
+    I.fillField(this.fields.inserirSenha, secret(password));
     home_page.botaoLogin();
     home_page.validarTextoEmailInvalido();
   },
