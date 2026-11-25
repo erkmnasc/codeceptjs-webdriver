@@ -1,6 +1,12 @@
-const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure');
-// modo headless com HEADLESS=true (npm run test:headless)
-setHeadlessWhen(process.env.HEADLESS);
+const { setCommonPlugins } = require('@codeceptjs/configure');
+
+// HEADLESS=true (npm run test:headless) roda o Chrome sem janela, com
+// tamanho fixo: sem isso o Chrome headless do Linux abre em 800x600 e o
+// layout responsivo esconde parte dos elementos.
+const headless = process.env.HEADLESS === 'true';
+const chromeArgs = headless
+  ? ['--headless=new', '--window-size=1280,1024', '--no-sandbox', '--disable-dev-shm-usage']
+  : [];
 
 // plugins comuns: screenshotOnFail, retryFailedStep etc.
 setCommonPlugins();
@@ -16,6 +22,9 @@ exports.config = {
       browser: 'chrome',
       windowSize: '1280x1024',
       waitForTimeout: 10000,
+      desiredCapabilities: {
+        'goog:chromeOptions': { args: chromeArgs },
+      },
     },
   },
   include: {

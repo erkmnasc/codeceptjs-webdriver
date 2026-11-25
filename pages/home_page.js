@@ -21,10 +21,11 @@ module.exports = {
 
   paginaInicial() {
     I.amOnPage('/')
+    I.waitForVisible('.right_list_fix', 15)
   },
   botaoCadastro() {
     I.click(this.button.botaoCadastro)
-    I.wait(3)
+    I.waitForVisible('#user', 10)
   },
   botaoCadastrar() {
     I.click(this.button.botaoRealizarCadastro)
