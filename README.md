@@ -32,5 +32,5 @@ npm run test:headless   # sem abrir o navegador
 
 ## CI
 
-O GitHub Actions roda os testes em modo headless a cada push na `master`, em
-pull requests e manualmente (`.github/workflows/ci.yml`).
+O GitHub Actions roda os testes em modo headless a cada push na `main`, em
+pull requests, manualmente e toda segunda-feira (`.github/workflows/ci.yml`).
