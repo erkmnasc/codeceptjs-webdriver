@@ -40,7 +40,8 @@ module.exports = {
     I.click(this.button.botaoLoginRealizadoOK)
   },
   validarCadastroComSucesso() {
-    I.waitForElement(this.fields.validarCadastroComSucesso)
+    // Confere o texto: o mesmo alerta (#swal2-title) também é usado para erros
+    I.waitForText('Cadastro realizado!', 10, this.fields.validarCadastroComSucesso)
   },
   validarTextoEmailInvalido() {
     I.waitForText(this.fields.validarTextoEmailInvalido, 5)
