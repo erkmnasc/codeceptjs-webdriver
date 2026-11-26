@@ -21,7 +21,7 @@ steps/   cenários (*_test.js)
 
 ## Como rodar
 
-Precisa de Node.js 18 ou mais novo e do Google Chrome. O driver do Chrome é
+Precisa de Node.js 20 ou mais novo e do Google Chrome. O driver do Chrome é
 baixado automaticamente pelo WebdriverIO.
 
 ```bash

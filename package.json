@@ -11,8 +11,13 @@
   "license": "MIT",
   "devDependencies": {
     "@faker-js/faker": "^10.6.0",
-    "codeceptjs": "^3.7.9",
+    "codeceptjs": "^4.2.5",
     "cross-env": "^10.1.0",
-    "webdriverio": "^9.33.1"
+    "webdriverio": "^10.2.0"
+  },
+  "overrides": {
+    "uuid": "^11.1.1",
+    "glob": "^14.0.6",
+    "minimatch": "^11.0.9"
   }
 }
